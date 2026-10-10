@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kairos ご提案｜Shopify越境ECサイト構築 - クリエイターズ・ラボ様</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif+JP:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1B1F3B;
+    --navy-deep:#0D0F1F;
+    --coral:#FF6B81;
+    --gold:#D4AF8C;
+    --jade:#2E8B8B;
+    --cream:#F7F3EE;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:'Noto Sans JP', sans-serif;
+    background:var(--cream);
+    color:var(--navy-deep);
+    line-height:1.85;
+    overflow-x:hidden;
+  }
+  h1,h2,h3{
+    font-family:'Noto Serif JP', serif;
+    margin:0;
+    letter-spacing:0.02em;
+  }
+  .en{
+    font-family:'Cormorant Garamond', serif;
+  }
+  a{color:inherit;}
+  .wrap{
+    max-width:1080px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    background:
+      radial-gradient(circle at 85% 15%, rgba(212,175,140,0.25), transparent 45%),
+      radial-gradient(circle at 10% 90%, rgba(255,107,129,0.18), transparent 50%),
+      linear-gradient(160deg, var(--navy-deep) 0%, var(--navy) 55%, #26304f 100%);
+    color:var(--cream);
+    display:flex;
+    align-items:center;
+    padding:100px 0 60px;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    top:-20%;
+    right:-15%;
+    width:620px;
+    height:620px;
+    border-radius:50%;
+    border:1px solid rgba(247,243,238,0.18);
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    top:-5%;
+    right:-5%;
+    width:420px;
+    height:420px;
+    border-radius:50%;
+    background:conic-gradient(from 90deg, rgba(212,175,140,0.12), transparent 30%, rgba(46,139,139,0.15), transparent 70%);
+  }
+  .tag-line{
+    display:inline-flex;
+    gap:10px;
+    align-items:center;
+    font-size:12px;
+    letter-spacing:0.25em;
+    color:var(--gold);
+    border:1px solid rgba(212,175,140,0.5);
+    padding:6px 16px;
+    border-radius:30px;
+    margin-bottom:28px;
+  }
+  .tag-line span.dot{
+    width:6px;height:6px;border-radius:50%;background:var(--coral);display:inline-block;
+  }
+  .hero h1{
+    font-size:clamp(32px, 5vw, 56px);
+    line-height:1.5;
+    max-width:760px;
+    position:relative;
+    z-index:2;
+  }
+  .hero h1 .accent{
+    color:var(--coral);
+  }
+  .hero .sub{
+    margin-top:28px;
+    max-width:600px;
+    font-size:15.5px;
+    color:#d9d6e8;
+    position:relative;
+    z-index:2;
+  }
+  .lang-badges{
+    display:flex;
+    gap:12px;
+    margin-top:40px;
+    flex-wrap:wrap;
+    position:relative;
+    z-index:2;
+  }
+  .lang-badges span{
+    font-family:'Cormorant Garamond', serif;
+    font-size:14px;
+    letter-spacing:0.1em;
+    padding:8px 18px;
+    border:1px solid rgba(247,243,238,0.3);
+    border-radius:4px;
+    color:var(--cream);
+    background:rgba(255,255,255,0.03);
+  }
+  .currency-float{
+    position:absolute;
+    font-family:'Cormorant Garamond', serif;
+    color:rgba(255,255,255,0.08);
+    font-size:120px;
+    font-style:italic;
+    user-select:none;
+    z-index:1;
+  }
+  .c1{top:8%; left:4%; font-size:90px;}
+  .c2{bottom:4%; right:6%; font-size:140px;}
+
+  /* ===== SECTION COMMON ===== */
+  section{
+    padding:100px 0;
+    position:relative;
+  }
+  .eyebrow{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    color:var(--jade);
+    font-size:17px;
+    letter-spacing:0.08em;
+    margin-bottom:14px;
+    display:block;
+  }
+  .sec-title{
+    font-size:clamp(24px,3.4vw,34px);
+    color:var(--navy-deep);
+    margin-bottom:20px;
+  }
+
+  /* ===== UNDERSTANDING ===== */
+  .understand{
+    background:var(--cream);
+  }
+  .understand-grid{
+    display:grid;
+    grid-template-columns:1.1fr 1fr;
+    gap:60px;
+    align-items:start;
+  }
+  .understand-text p{
+    font-size:15.5px;
+    color:#30324a;
+  }
+  .understand-card{
+    background:var(--navy);
+    color:var(--cream);
+    padding:40px 34px;
+    border-radius:4px;
+    position:relative;
+    overflow:hidden;
+  }
+  .understand-card::before{
+    content:"";
+    position:absolute;
+    width:200px;height:200px;
+    background:radial-gradient(circle, rgba(255,107,129,0.3), transparent 70%);
+    top:-60px;right:-60px;
+  }
+  .understand-card h3{
+    font-size:19px;
+    color:var(--gold);
+    margin-bottom:18px;
+    position:relative;
+  }
+  .understand-card ul{
+    padding-left:20px;
+    margin:0;
+    font-size:14.5px;
+    position:relative;
+  }
+  .understand-card li{margin-bottom:12px;}
+
+  /* ===== VALUE CARDS ===== */
+  .value{
+    background:linear-gradient(180deg, #ffffff 0%, var(--cream) 100%);
+  }
+  .value-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(230px,1fr));
+    gap:28px;
+    margin-top:50px;
+  }
+  .value-card{
+    background:#fff;
+    border:1px solid #e9e2d8;
+    border-radius:6px;
+    padding:34px 26px;
+    transition:transform .25s ease, box-shadow .25s ease;
+    position:relative;
+  }
+  .value-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 18px 40px rgba(27,31,59,0.12);
+  }
+  .value-num{
+    font-family:'Cormorant Garamond', serif;
+    font-size:40px;
+    color:var(--coral);
+    font-style:italic;
+    margin-bottom:14px;
+    display:block;
+  }
+  .value-card h3{
+    font-size:17.5px;
+    margin-bottom:12px;
+    color:var(--navy-deep);
+  }
+  .value-card p{
+    font-size:14px;
+    color:#52526a;
+    margin:0;
+  }
+
+  /* ===== SCHEDULE ===== */
+  .schedule{
+    background:var(--navy-deep);
+    color:var(--cream);
+  }
+  .schedule .eyebrow{color:var(--gold);}
+  .schedule .sec-title{color:var(--cream);}
+  .timeline{
+    margin-top:60px;
+    position:relative;
+  }
+  .timeline::before{
+    content:"";
+    position:absolute;
+    left:20px;
+    top:0;
+    bottom:0;
+    width:1px;
+    background:linear-gradient(180deg, var(--coral), var(--jade), var(--gold));
+  }
+  .t-item{
+    position:relative;
+    padding-left:60px;
+    margin-bottom:46px;
+  }
+  .t-item:last-child{margin-bottom:0;}
+  .t-item::before{
+    content:"";
+    position:absolute;
+    left:12px;
+    top:4px;
+    width:17px;height:17px;
+    border-radius:50%;
+    background:var(--navy-deep);
+    border:2px solid var(--coral);
+  }
+  .t-week{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    color:var(--gold);
+    font-size:15px;
+    letter-spacing:0.08em;
+    margin-bottom:6px;
+    display:block;
+  }
+  .t-item h3{
+    font-size:18px;
+    margin-bottom:8px;
+    color:#fff;
+  }
+  .t-item p{
+    font-size:14px;
+    color:#c7c5d8;
+    margin:0;
+    max-width:560px;
+  }
+
+  /* ===== CLOSING ===== */
+  .closing{
+    background:
+      radial-gradient(circle at 20% 20%, rgba(46,139,139,0.18), transparent 45%),
+      radial-gradient(circle at 80% 80%, rgba(255,107,129,0.18), transparent 45%),
+      var(--navy);
+    color:var(--cream);
+    text-align:center;
+  }
+  .closing h2{
+    font-size:clamp(26px,4vw,38px);
+    margin-bottom:20px;
+  }
+  .closing p{
+    max-width:560px;
+    margin:0 auto 40px;
+    font-size:15px;
+    color:#d9d6e8;
+  }
+  .cta-btn{
+    display:inline-block;
+    background:var(--coral);
+    color:#fff;
+    padding:18px 48px;
+    border-radius:40px;
+    font-size:15.5px;
+    letter-spacing:0.06em;
+    text-decoration:none;
+    box-shadow:0 14px 34px rgba(255,107,129,0.35);
+    transition:transform .2s ease;
+  }
+  .cta-btn:hover{transform:translateY(-3px);}
+  .closing-meta{
+    margin-top:50px;
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    flex-wrap:wrap;
+    font-size:13px;
+    color:#a9a7c0;
+  }
+  footer{
+    background:var(--navy-deep);
+    color:#8f8da8;
+    text-align:center;
+    padding:30px 0;
+    font-size:12.5px;
+    letter-spacing:0.04em;
+  }
+
+  @media (max-width:860px){
+    .understand-grid{grid-template-columns:1fr;}
+    .hero{padding:140px 0 60px;}
+    section{padding:70px 0;}
+  }
+  @media (max-width:520px){
+    .lang-badges span{font-size:12px;padding:6px 12px;}
+    .currency-float{font-size:70px !important;}
+    .cta-btn{padding:16px 34px;font-size:14px;}
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="currency-float c1 en">¥</div>
+  <div class="currency-float c2 en">$</div>
+  <div class="wrap">
+    <span class="tag-line"><span class="dot"></span>PROPOSAL FROM KAIROS</span>
+    <h1>美しさに、<br>国境という制約を<span class="accent">つけない。</span></h1>
+    <p class="sub">
+      クリエイターズ・ラボ様がアジア圏に届けようとしている美容商品。<br>
+      その世界観を、日本語・英語・繁体字という3つの言語と、3つの通貨の中で、<br>
+      迷いなく伝わるShopifyストアへ。Kairosが構築のすべてを担います。
+    </p>
+    <div class="lang-badges">
+      <span class="en">日本語 / JP</span>
+      <span class="en">ENGLISH / EN</span>
+      <span class="en">繁體中文 / TW</span>
+    </div>
+  </div>
+</section>
+
+<section class="understand">
+  <div class="wrap understand-grid">
+    <div class="understand-text">
+      <span class="eyebrow">Understanding the Project</span>
+      <h2 class="sec-title">この案件、ただの「テーマ導入」ではないと<br>理解しています。</h2>
+      <p>
+        今回のご依頼は、無料テーマを使ったシンプルな構築に見えて、実際には「多言語・多通貨・多文化」という
+        越境ECならではの難しさが凝縮された案件だと捉えています。
+      </p>
+      <p>
+        デザインの方向性・構成・素材はすでにご用意されている状態。つまり求められているのは、
+        発想力ではなく「正確に・崩さず・時差や言語の壁なく形にする実行力」です。
+      </p>
+      <p>
+        4カテゴリー×10点、計40点の商品登録、法的ページを含む複数ページ構成、
+        自動翻訳の表示崩れチェック、海外送料・決済設定——
+        ひとつひとつは地味でも、積み重なれば越境ECの成否を分ける工程ばかりです。
+        Kairosはこの「地味だが重要な工程」こそ丁寧に仕上げます。
+      </p>
+    </div>
+    <div class="understand-card">
+      <h3>想定している前提</h3>
+      <ul>
+        <li>構成・デザイン方向性・素材はすでに確定 → 実装精度が最重要</li>
+        <li>翻訳アプリの自動翻訳は「表示確認・崩れ修正」までが本番</li>
+        <li>コラボレーターアカウントでの作業・守秘義務を前提とした進行</li>
+        <li>ポートフォリオ非掲載案件として、記録・報告のみで信頼を担保</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="value">
+  <div class="wrap">
+    <span class="eyebrow">What Kairos Provides</span>
+    <h2 class="sec-title">Kairosが提供できる価値</h2>
+    <div class="value-grid">
+      <div class="value-card">
+        <span class="value-num en">01</span>
+        <h3>越境EC特有の設定経験</h3>
+        <p>多言語・多通貨・マーケット設定・海外送料は、単なる機能オンではなく「現地での見え方」まで含めて検証します。</p>
+      </div>
+      <div class="value-card">
+        <span class="value-num en">02</span>
+        <h3>正確なテーマカスタマイズ</h3>
+        <p>公式無料テーマの範囲内で、ご指定のカラー・フォント・レイアウトを忠実に再現。ファーストビューの4カテゴリー導線も丁寧に設計します。</p>
+      </div>
+      <div class="value-card">
+        <span class="value-num en">03</span>
+        <h3>40点の商品登録を正確・迅速に</h3>
+        <p>支給素材をもとに4カテゴリー×10点を漏れなく登録。コレクション設定まで含め、ストア全体の整合性を保ちます。</p>
+      </div>
+      <div class="value-card">
+        <span class="value-num en">04</span>
+        <h3>表示確認までやり切る姿勢</h3>
+        <p>自動翻訳後の文字崩れ、通貨表示のズレ、スマホでの見え方——「設定した」で終わらせず、必ず目視確認します。</p>
+      </div>
+      <div class="value-card">
+        <span class="value-num en">05</span>
+        <h3>平日毎日の連絡・進捗共有</h3>
+        <p>海外発送を伴う案件だからこそ、進捗のブラックボックス化を避けます。平日1日1回以上のご連絡に対応します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="schedule">
+  <div class="wrap">
+    <span class="eyebrow">Schedule Image</span>
+    <h2 class="sec-title">進め方・スケジュールイメージ</h2>
+    <div class="timeline">
+      <div class="t-item">
+        <span class="t-week en">Week 1</span>
+        <h3>キックオフ・素材受領・構築開始</h3>
+        <p>構成案・デザイン方向性・ロゴ、商品情報などを受領し、テーマ導入とデザイン調整を開始します。コラボレーターアカウントでの参加もこの段階で設定します。</p>
+      </div>
+      <div class="t-item">
+        <span class="t-week en">Week 2–3</span>
+        <h3>ページ構築・商品登録・コレクション設定</h3>
+        <p>トップ、商品詳細、会社概要、店舗情報、FAQ、利用規約等の法的ページを構築。並行して40点の商品登録とカテゴリー分けを進めます。</p>
+      </div>
+      <div class="t-item">
+        <span class="t-week en">Week 4–5</span>
+        <h3>多言語・多通貨・マーケット設定</h3>
+        <p>日本語・英語・繁体字の翻訳設定と表示確認、現地通貨と日本円の多通貨設定、マーケット設定、海外送料設定を行います。</p>
+      </div>
+      <div class="t-item">
+        <span class="t-week en">Week 6–7</span>
+        <h3>決済設定サポート・SEO・スマホ表示確認</h3>
+        <p>決済設定のサポート、基本的なSEO設定、スマートフォン表示の最終チェックを行い、全体の整合性を確認します。</p>
+      </div>
+      <div class="t-item">
+        <span class="t-week en">Week 8</span>
+        <h3>最終確認・納品</h3>
+        <p>貴社による最終確認を経て納品。必要に応じて軽微な修正に対応します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="wrap">
+    <h2>一言で言えば——<br>「任せて安心」なパートナーでありたい。</h2>
+    <p>
+      Shopify構築実績、多言語・多通貨設定の経験、そして平日の密な連絡体制。
+      クリエイターズ・ラボ様の越境EC事業を、裏側からしっかり支えるご提案です。
+      まずは詳細のご相談から、お気軽にお声がけください。
+    </p>
+    <a href="#" class="cta-btn">Kairosに相談する</a>
+    <div class="closing-meta">
+      <span>固定報酬 55,000円（税込）</span>
+      <span>納期目安：素材受領後4〜8週間</span>
+      <span>守秘義務遵守 / ポートフォリオ非掲載対応可</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © Kairos — Web制作・システム開発チーム｜本提案はクリエイターズ・ラボ様向けに作成しています
+</footer>
+
+</body>
+</html>
